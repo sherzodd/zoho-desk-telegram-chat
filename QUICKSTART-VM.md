@@ -89,7 +89,7 @@ curl ifconfig.me
 
 # Then edit .env:
 APP_URL=http://YOUR_VM_PUBLIC_IP:8080  # Use the IP from above
-TELEGRAM_BOT_TOKEN=8539976996:AAGWgTCpWaku9rcUvQ81Dnrsi0JywEaa4_g
+TELEGRAM_BOT_TOKEN=BT
 TELEGRAM_WEBHOOK_AUTO_REGISTER=true   # Enable auto-registration!
 ```
 
