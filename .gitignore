@@ -1,0 +1,158 @@
+# Environment variables
+.env
+.env.local
+.env.production
+
+# Logs
+logs/
+*.log
+app.log
+error.log
+nohup.out
+
+# PID files
+*.pid
+app.pid
+
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+# Eclipse
+.classpath
+.project
+.settings/
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+# VS Code
+.vscode/
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~.nib
+*.bak
+*.cache
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+hs_err_pid*
+replay_pid*
+
+# Maven (if used)
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# Spring Boot
+spring-boot-devtools.properties
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Redis
+dump.rdb
+
+# Docker volumes (local data)
+postgres_data/
+redis_data/
+
+# ngrok
+ngrok
+ngrok.exe
+ngrok.zip
+
+# Archives
+*.tar.gz
+*.zip
+*.rar
+*.7z
+
+# Secrets
+secrets/
+credentials/
+*.pem
+*.key
+*.cert
+*.crt
+
+# Test coverage
+coverage/
+*.gcov
+*.gcda
+*.gcno
+
+# Application specific
+chatbot/bin/
+chatbot/out/
+
+# Deployment
+deployment/
+dist/
+
+# Backup files
+*.backup
+backup_*.sql

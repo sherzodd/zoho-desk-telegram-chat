@@ -1,0 +1,58 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Documentation
+*.md
+LICENSE
+
+# IDE
+.idea
+*.iml
+.vscode
+.eclipse
+
+# Build artifacts
+build/
+target/
+.gradle/
+out/
+
+# Logs
+*.log
+logs/
+
+# Environment
+.env
+.env.local
+.env.production
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test files
+**/test/
+**/*Test.java
+**/*Spec.java
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+azure-pipelines.yml
+
+# Docker
+docker-compose.yml
+Dockerfile
+.dockerignore
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+*~
+
+# ngrok
+ngrok
+ngrok.exe
