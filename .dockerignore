@@ -42,10 +42,10 @@ Thumbs.db
 .gitlab-ci.yml
 azure-pipelines.yml
 
-# Docker
-docker-compose.yml
-Dockerfile
-.dockerignore
+# Docker (keep these for context)
+# docker-compose.yml
+# Dockerfile
+# .dockerignore
 
 # Temporary files
 *.tmp

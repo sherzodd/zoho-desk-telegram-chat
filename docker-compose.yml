@@ -35,6 +35,61 @@ services:
       timeout: 5s
       retries: 5
 
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: telegramdesk-app
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      # Server
+      SERVER_PORT: ${SERVER_PORT:-8080}
+
+      # Database
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: ${DB_NAME:-telegramdesk}
+      DB_USER: ${DB_USER:-postgres}
+      DB_PASS: ${DB_PASS:-postgres}
+
+      # Redis
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+
+      # Telegram
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN}
+      APP_URL: ${APP_URL}
+      TELEGRAM_WEBHOOK_AUTO_REGISTER: ${TELEGRAM_WEBHOOK_AUTO_REGISTER:-false}
+
+      # Zoho
+      ZOHO_ORG_ID: ${ZOHO_ORG_ID}
+      ZOHO_CLIENT_ID: ${ZOHO_CLIENT_ID}
+      ZOHO_CLIENT_SECRET: ${ZOHO_CLIENT_SECRET}
+      ZOHO_REFRESH_TOKEN: ${ZOHO_REFRESH_TOKEN}
+      ZOHO_API_DOMAIN: ${ZOHO_API_DOMAIN:-https://desk.zoho.com}
+
+      # Conversation Cleanup
+      CONVERSATION_CLEANUP_ENABLED: ${CONVERSATION_CLEANUP_ENABLED:-true}
+      CONVERSATION_RETENTION_DAYS: ${CONVERSATION_RETENTION_DAYS:-7}
+
+      # Spring Profile
+      SPRING_PROFILES_ACTIVE: ${SPRING_PROFILES_ACTIVE:-dev}
+    ports:
+      - "${SERVER_PORT:-8080}:8080"
+    networks:
+      - telegramdesk-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/admin/health"]
+      interval: 30s
+      timeout: 3s
+      start_period: 40s
+      retries: 3
+
 volumes:
   postgres_data:
     driver: local
